@@ -245,9 +245,9 @@ def main():
             db=math.sqrt((color[2]-color1[2])**2)
             
 
-            df=((dr*dr)+(dg*dg)+(db*db))**0.3
+            df=((dr)+(dg)+(db))/3.0
             
-            if dr<70 and dg<70 and db<70:
+            if df<50:
                 is_color=True
             return is_color
 
@@ -398,6 +398,7 @@ def main():
                         bullet_group=rockets[3].bullet_grouped
         
         for marblehit in pygame.sprite.groupcollide(marble_group,bullet_group,True,True):
+            print(marblehit.color)
             print(colorhit(marblehit.color))
             pygame.mixer.Sound('resources/explosion.wav').play()
             (x,y)=marblehit.center
