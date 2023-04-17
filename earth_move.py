@@ -18,8 +18,8 @@ red = (155, 0, 0)
 purple=Allcolors['purple']
 blue=Allcolors['blue']
 clock = pygame.time.Clock()
-width = 1000
-height = 700
+width = 1350
+height = 800
 screen = pygame.display.set_mode((width, height))
 ico_image=pygame.image.load('resources/ico.svg')
 pygame.display.set_caption('Earth_Marble')
@@ -391,7 +391,7 @@ def main():
             (screen_text,f'Ice score: {earth_states["ice"]}',green,(2,5),white,(200,20),(width/2,65)),
             (screen_text,f'Gamma score: {earth_states["water"]}',green,(2,5),white,(200,20),(width/2,85)),
             (screen_text,f'Aqua score: {earth_states["gamma"]}',green,(2,5),white,(200,20),(width/2,110)),
-            (screen_text,f'Time left:{int(remaining_time)} ',white,(2,5),black,(200,25),(width-150,20)),
+            (screen_text,f'Time left:{int(remaining_time)} s ',white,(2,5),black,(200,25),(width-150,20)),
 
         ]
 
@@ -470,10 +470,7 @@ def main():
             update_states(marblehit.color)
                     
                 
-        # # timer+=clock.get_time() 
-        # # print(timer)       
-        # elasped_time=time.time()-start_time
-        # time_left-=elasped_time
+      
         pygame.display.flip()
         
         
